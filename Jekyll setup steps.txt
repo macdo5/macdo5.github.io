@@ -1,0 +1,3 @@
+Jekyll setup steps:
+sudo apt-get install ruby-full
+sudo gem update --system
