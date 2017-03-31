@@ -10,6 +10,16 @@ footer {
   padding: 25px;
 }
 
+.jumbotron{
+	margin-bottom: 0px;
+}
+
 .col-sm-3 .img-responsive{
     width: 100%;
+}
+
+.background{
+	padding-top: 30px;
+	background: url('images/background.jpg');
+	background-size: 100%;
 }
