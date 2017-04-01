@@ -28,34 +28,93 @@ body {
 }
 
 .container-fluid.section{
-	margin: 20px 0px 20px 0px;
+	margin-bottom: 40px;
 	padding-top:50px;
 	height:500px;
-	color: #fff; 
-	background-color: #1E88E5;
+	color: #fff;
 }
 
-#section1 {
-  
+#LoRaWAN {
+	/*http://stackoverflow.com/questions/23208200/how-to-darken-a-background-using-css*/
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ), url('images/Ravensbourne3.jpg');
+	background-position: center;
 }
 
-#section2 {
-	
+#Android {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ), url('images/Ravensbourne2.jpg');
+	background-position: center;
 }
 
-#section3 {
-	
+#Linux {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ), url('images/Ravensbourne1.jpg');
+	background-position: center;
 }
 
-#section41 {
-	
+#Java {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ), url('images/Ravensbourne1.jpg');
+	background-position: center;
 }
 
-#section42 {
-	
+#JavaScript {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ), url('images/Ravensbourne1.jpg');
+	background-position: center;
+}
+#CPP {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ), url('images/Ravensbourne1.jpg');
+	background-position: center;
+}
+#CS {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ), url('images/Ravensbourne1.jpg');
+	background-position: center;
+}
+#Ruby {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ), url('images/Ravensbourne1.jpg');
+	background-position: center;
+}
+#Python {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ), url('images/Ravensbourne1.jpg');
+	background-position: center;
+}
+#SQL {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ), url('images/Ravensbourne1.jpg');
+	background-position: center;
 }
 #AboutOscar {
-	
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ), url('images/Ravensbourne1.jpg');
+	background-position: center;
 }
 
 /* Add a gray background color and some padding to the footer */
