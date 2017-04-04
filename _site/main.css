@@ -1,15 +1,95 @@
+body {
+  position: relative; 
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+	background-color: #330033
+}
+
+.affix {
+  top:0;
+  width: 100%;
+  z-index: 9999 !important;
+}
+
 /* Remove the navbar's default margin-bottom and rounded borders */ 
 .navbar {
   margin-bottom: 0;
   border-radius: 0;
+  background-color: #1a001a;
+}
+
+.affix ~ .container-fluid {
+ position: relative;
+ top: 50px;
+ width: 100%;
+}
+
+.jumbotron{
+	margin-bottom: 0px;
+	padding: 0px;
+}
+.container.text-center{
+	padding: 20px 0px 20px 0px;
+}
+
+.container-fluid.section{
+	margin-bottom: 40px;
+	padding-top:50px;
+	padding-bottom:50px;
+	color: #fff;
+}
+
+#LoRaWAN {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ), url(images/Ravensbourne3.jpg);
+	background-position: center;
+}
+
+#Android {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ), url(images/Ravensbourne2.jpg);
+	background-position: center;
+}
+
+#Linux {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ), url(images/Ravensbourne1.jpg);
+	background-position: center;
+}
+
+#Languages {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ), url(images/Ravensbourne3.jpg);
+	background-position: center;
+}
+
+#Bachelor {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ), url(images/Ravensbourne2.jpg);
+	background-position: center;
+}
+
+#AboutOscar {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ), url(images/Ravensbourne1.jpg);
+	background-position: center;
 }
 
 /* Add a gray background color and some padding to the footer */
 footer {
   background-color: #f2f2f2;
   padding: 25px;
-}
-
-.col-sm-3 .img-responsive{
-    width: 100%;
 }

@@ -1,91 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Oscar Macdonald Portfolio</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="main.js"></script>
-  <link rel="stylesheet" href="main.css">
-</head>
-<body>
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">Portfolio</a>
+  <head>
+    <title>Oscar Macdonald Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <div class="jumbotron">
+      <div class="container text-center">
+        <h1>Oscar Macdonald</h1>
+        <p>Bachelor Degree of Information Technology; Otago Polytechnic, 2017</p>
+      </div>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<div class="jumbotron">
-  <div class="container text-center">
-    <h1>Oscar Macdonald</h1>      
-    <p>Bachelors Information Technology Graduate; Otago Polytechnic, 2017</p>
-  </div>
-</div>
-  
-<div class="container-fluid bg-3 text-center">    
-  <h3>Projects</h3><br>
-  <div class="row">
-    <div class="col-sm-3">
-      <p>Dunedin LoRaWAN</p>
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive"  alt="LoRa logo" href="#">
-    </div>
-    <div class="col-sm-3"> 
-      <p>Android Mobile Apps</p>
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive"alt="Image" href="#">
-    </div>
-    <div class="col-sm-3"> 
-      <p>Some text..</p>
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="Image" href="#">
-    </div>
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive"alt="Image" href="#">
-    </div>
-  </div>
-</div><br>
-
-<div class="container-fluid bg-3 text-center">
-  <h3>More about me</h3><br>
-  <div class="row">
-    <div class="col-sm-3">
-      <p>Curriculum Vitae</p>
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="Image" href="#">
-    </div>
-    <div class="col-sm-3"> 
-      <p>Otago Polytechnic</p>
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="Image" href="#">
-    </div>
-    <div class="col-sm-3"> 
-      <p>Iris Data Science</p>
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="Image" href="#">
-    </div>
-    <div class="col-sm-3">
-      <p>Who is Oscar?</p>
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="Image" href="#">
-    </div>
-  </div>
-</div><br><br>
-
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
-</footer>
-
-</body>
+    <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+          </button>
+          <a class="navbar-brand" href="#">macdo5.github.io</a>
+        </div>
+        <div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li><a href="#LoRaWAN">LoRaWAN</a></li>
+              <li><a href="#Android">Android</a></li>
+              <li><a href="#Linux">Linux</a></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Languages<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#Languages">Java</a></li>
+                  <li><a href="#Languages">JavaScript</a></li>
+                  <li><a href="#Languages">C++</a></li>
+                  <li><a href="#Languages">C#</a></li>
+                  <li><a href="#Languages">Ruby</a></li>
+                  <li><a href="#Languages">Python</a></li>
+                  <li><a href="#Languages">SQL</a></li>
+                </ul>
+              </li>
+              <li><a href="#Bachelor">Education</a></li>
+              <li><a href="#AboutOscar">Who is Oscar?</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+	<div class="container">
+		<div id="LoRaWAN" class="container-fluid section">
+		  <h1>LoRaWAN Project</h1>
+		  <p>The LoRaWAN Project (previously known as The Things Network Project) is the introduction of an open, free and community-owned IoT data network for Dunedin.</p>
+		  <p>With a team of staff and students collaborating together, our goal is to deploy IoT devices linked to LoRa gateways kilometers away, managed by our own local servers</p>
+		  <p>This will provide locals with the opportunity to collect data with a small, cheap sensor usinmg our free network. At the same time, both staff and students get to learn and apply our skills, the perfect win-win!</p>
+		</div>
+		<div id="Android" class="container-fluid section">
+		  <h1>Android Mobile App Development</h1>
+		  <p>Portable, handheld devices are becoming renowned for their use in education, as well as beneficial for quick notifications and control over the IoT. Plus the games are really fun!</p> 
+		  <p>My focus is for powerful, simple and user-friendly apps with documented, Object-Oriented, SOLID design.</p>
+		</div>
+		<div id="Linux" class="container-fluid section">
+		  <h1>Linux</h1>
+		  <p>Linux is a very popular operating system for servers because of its compatability with the LAMP bundle, its advanced security and its networking capabilities.</p>
+      <p>Otago Polytechnic has courses in Linux and Networking, and both of these papers were instrumental in securing my first internship at Iris Data Science in Dunedin.</p>
+      <p>I was given the opportunity to exercise my problem-solving skills and to develop my knowlege of Linux even further while working at Iris Data Science with great success.</p>
+		  <p></p>
+		</div>
+		<div id="Languages" class="container-fluid section">
+		  <h1>Languages</h1>
+		  <div class="row">
+			<div class="col-lg-3 col-md-4 col-xs-6"><img class="img-responsive" src="images/c-sharp-transparent.png"/></div>
+			<div class="col-lg-3 col-md-4 col-xs-6"><img class="img-responsive" src="images/cpp-transparent.png"/></div>
+			<div class="col-lg-3 col-md-4 col-xs-6"><img class="img-responsive" src="images/java-transparent.png"/></div>
+			<div class="col-lg-3 col-md-4 col-xs-6"><img class="img-responsive" src="images/js.png"/></div>
+			<div class="col-lg-3 col-md-4 col-xs-6"><img class="img-responsive" src="images/ruby-transparent.png"/></div>
+			<div class="col-lg-3 col-md-4 col-xs-6"><img class="img-responsive" src="images/python-transparent.png"/></div>
+			<div class="col-lg-3 col-md-4 col-xs-6"><img class="img-responsive" src="images/sql-transparent.png"/></div>
+		  </div>
+		</div>
+		<div id="Bachelor" class="container-fluid section">
+		  <h1>Bachelor of Information Technology(BIT)</h1>
+		  <p>At Otago Polytechnic, students enroled in the BIT develop high-level technical abilities and a strong theoretical understanding of IT concepts. </p>
+		  <p>Combined with skills in professional communication and practical experience, graduate are ready to work effectively in the industry.</p>
+      <h3>Course Results</h3>
+      <div class="table-responsive">   
+        <h4>2015</h4>
+        <table class="table">
+          <thead>            
+            <tr>
+              <th>Paper Title</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Professional Practice for Information Technology</td>
+              <td>A</td>
+            </tr>
+            <tr>
+              <td>Introduction to Systems Analysis</td>
+              <td>A</td>
+            </tr>
+            <tr>
+              <td>Programming 1</td>
+              <td>A+</td>
+            </tr>
+            <tr>
+              <td>Programming 2</td>
+              <td>A+</td>
+            </tr>
+            <tr>
+              <td>Web 1 - Technology and Development</td>
+              <td>A+</td>
+            </tr>
+            <tr>
+              <td>Introduction to Networks</td>
+              <td>A+</td>
+            </tr>
+            <tr>
+              <td>PC Maintenance</td>
+              <td>A+</td>
+            </tr>
+            <tr>
+              <td>Maths for IT</td>
+              <td>A+</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-responsive">
+        <h4>2016</h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Paper Title</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Software Engineering</td>
+              <td>A</td>
+            </tr>
+            <tr>
+              <td>Databases 2</td>
+              <td>B+</td>
+            </tr>
+            <tr>
+              <td>Programming 3</td>
+              <td>A</td>
+            </tr>
+            <tr>
+              <td>Routing and Switching Essentials</td>
+              <td>A+</td>
+            </tr>
+            <tr>
+              <td>Linux Operating Systems</td>
+              <td>A-</td>
+            </tr>
+            <tr>
+              <td>Embedded Systems</td>
+              <td>A</td>
+            </tr>
+            <tr>
+              <td>Automation and Robotics</td>
+              <td>A</td>
+            </tr>
+            <tr>
+              <td>Programming 4: Intermediate Architectures and Algorithms</td>
+              <td>A+</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-responsive">
+        <h4>2017</h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Paper Title</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Project 1</td>
+              <td>TBA</td>
+            </tr>
+            <tr>
+              <td>Project 2</td>
+              <td>TBA</td>
+            </tr>
+            <tr>
+              <td>Object Oriented Systems Development</td>
+              <td>TBA</td>
+            </tr>
+            <tr>
+              <td>Algorithms and Data Structures</td>
+              <td>TBA</td>
+            </tr>
+            <tr>
+              <td>Web 3 - Enterprise Development</td>
+              <td>TBA</td>
+            </tr>
+            <tr>
+              <td>Design and Development of Applications for Mobile Devices</td>
+              <td>TBA</td>
+            </tr>
+            <tr>
+              <td>Next Generation Networked Hardware</td>
+              <td>TBA</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+		</div>
+		<div id="AboutOscar" class="container-fluid section">
+		  <h1>Who is Oscar?</h1>
+		  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+		  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+		</div>
+	</div>
+	<footer class="container-fluid text-center">
+	  <p>Made using HTML, CSS and JS with Bootstrap framework. Hosted using GitHub pages and Jekyll.</p>
+	</footer>
+  </body>
 </html>
