@@ -12,25 +12,25 @@ For mongo collection format and information, refer to documentation on GitHub.
 import datetime
 import json
 import paho.mqtt.client as mqtt
-#from store_Sensor_Data_to_DB import sensor_Data_Handler
 from pymongo import MongoClient
 # http://api.mongodb.com/python/1.10.1/api/bson/json_util.html
 # Tools for using Python's json module with BSON documents
 from bson import json_util
 
 # MQTT Settings 
-MQTT_Broker = "https://iot.op-bit.nz"
-MQTT_Port = 1883
-Keep_Alive_Interval = 45
-MQTT_Topic = "application/#" # subscribe to all incoming messages that begin with application/
+MQTT_Broker = "iot.op-bit.nz"	# the web address that will publish the MQTT data
+MQTT_Port = 1883		# web port to access MQTT_Broker
+Keep_Alive_Interval = 45	# number of seconds to keep the connection alive between pings
+MQTT_Topic = "application/#" 	# subscribe to all incoming messages that begin with application/
 
 # MongoDB settings
 # from http://api.mongodb.com/python/current/tutorial.html
-client = MongoClient()
-db = client.duniot_database
-mqtt_collection = db.node_data
+client = MongoClient()		# connect to the local Mongo client
+db = client.duniot_database	# connect to the duniot_database
+mqtt_collection = db.node_data	# connect to the node_data collection
 
-
+# A node entry contains information about a specific node and its associated application.
+# Each NodeEntry has many DataEntries
 class NodeEntry:
 
     def __init__(self, devEUI, nodeName, applicationID, applicationName, dataEntry=[]):
@@ -41,7 +41,9 @@ class NodeEntry:
         self.data['applicationID'] = applicationID
         self.data['devEUI'] = devEUI
 
-
+# Data entry is a base64 encoded string which is interpreted differently per application, 
+# along with a timestamp that represents when the gateway received the data
+# Eg data["data"] = VDogMjQ=. When decoded, this becomes T: 24, which is used to represent temperature
 class DataEntry:
 
     def __init__(self, data, time):
@@ -49,8 +51,8 @@ class DataEntry:
         self.data["data"] = data
         self.data["gwTime"] = time
 
-
-# Subscribe to the specified topic
+# MQTT Methods:
+# Subscribes to the specified topic (MQTT_Topic)
 def on_connect(mqttc, mosq, obj, rc):
     mqttc.subscribe(MQTT_Topic, 0)
 
@@ -105,10 +107,11 @@ def on_message(mosq, obj, msg):
         )
         print("node data entries updated")
 
-
+# unused method
 def on_subscribe(mosq, obj, mid, granted_qos):
     pass
 
+# Script Begins:
 mqttc = mqtt.Client()
 print("connecting...")
 # Assign event callbacks
