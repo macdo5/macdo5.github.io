@@ -52,6 +52,7 @@
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#PersonalPortfolio">DunedinIoT Personal Portfolio<span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li><a href="#TechnicalProficiency">Technical Proficiency</a></li>
+                    <li><a href="#ProfessionalProficiency">Professional Proficiency</a></li>
             </ul>
           </div>
         </div>
@@ -253,10 +254,10 @@
             <br>
             <p>For example, one section of the script converts a string representation of a datetime and converts it to the BSON readable ISO-datetime format. This is a confusing line of code even to me, but the functionality is explained in the comments:</p>
             <pre><code>
-                # create the json from the data_entry object
-                # from https://stackoverflow.com/questions/127803
-                # Take the string for 'time' and convert into ISO-datetime format 8601DZ
-                data_entry = DataEntry(message_json['data'], datetime.datetime.strptime(message_json['rxInfo'][0]['time'], "%Y-%m-%dT%H:%M:%S.%fZ"))
+# create the json from the data_entry object
+# from https://stackoverflow.com/questions/127803
+# Take the string for 'time' and convert into ISO-datetime format 8601DZ
+data_entry = DataEntry(message_json['data'], datetime.datetime.strptime(message_json['rxInfo'][0]['time'], "%Y-%m-%dT%H:%M:%S.%fZ"))
             </code></pre>
             <p>In the comments, I include the source from stackoverflow.com even though answers from StackOverflow are badly reputed. The answer I found was accurate and works for converting RFC 3339 to ISO 8601DZ.  </p>
             <p>Other answers I found were for parsing dates of unknown format such as dateutil.parser.parse. I included my source to explain my reasoning, so other people reading the script and creating modified or improved versions would be able to keep the original date parsing or choose an alternative.</p>
@@ -289,26 +290,26 @@
             <br>
             <p>I feel that my contribution was significant to the overall project, and the work I put into my tasks resulted in reusable, quality software that will be used by both future students and our users. I listened to others in our meetings and contributed my ideas and open opinions as well.</p>
         </div>
-			<p>The IoT Dunedin project (nee The Things Network) is an Internet of Things network using LoRa specifications to create IT solutions for people in Dunedin. LoRa stands for ‘Low Power, Long Range’ in some cases, or ‘Low Power, Wide Area Network’ (LoRaWAN)
-			I first learned about The Things Network from the Otago Daily Times <a href="https://www.odt.co.nz/news/dunedin/new-network-smart-resource" target="_blank">article</a>. At the beginning of the year I chose to join The Things Network because I had taken the ‘Embedded Systems’ and ‘Automation and Robotics’ classes previously, so I believed I had the knowledge required to contribute to the project. And because the project was about device communication I thought the skills learnt in Networking would also come in handy. I had also read the project posters from the previous semester and The Things Network poster appealed as the most exciting and diverse project to me.
-			I believed that the project was well established and documented; my first task would be to catch up on the documentation and understand how the project worked. After talking with Dan Williamson, a member of The Things Network from 2016, it turned out that the documentation didn’t exist and that all previous work from the past year and a half was scrapped due to the changing LoRa specifications. So when the new group met for the first time it was decided that we would start from scratch.</p>
+			<p>The IoT Dunedin project (nee The Things Network) is an Internet of Things network using LoRa specifications to create IT solutions for people in Dunedin. LoRa stands for ‘Low Power, Long Range’ in some cases, or ‘Low Power, Wide Area Network’ (LoRaWAN)</p>
+			<p>I first learned about The Things Network from the Otago Daily Times <a href="https://www.odt.co.nz/news/dunedin/new-network-smart-resource" target="_blank">article</a>. At the beginning of the year I chose to join The Things Network because I had taken the ‘Embedded Systems’ and ‘Automation and Robotics’ classes previously, so I believed I had the knowledge required to contribute to the project. And because the project was about device communication I thought the skills learnt in Networking would also come in handy. I had also read the project posters from the previous semester and The Things Network poster appealed as the most exciting and diverse project to me.</p>
+			<p>I believed that the project was well established and documented; my first task would be to catch up on the documentation and understand how the project worked. After talking with Dan Williamson, a member of The Things Network from 2016, it turned out that the documentation didn’t exist and that all previous work from the past year and a half was scrapped due to the changing LoRa specifications. So when the new group met for the first time it was decided that we would start from scratch.</p></p>
 			<br>
 			<br>
 			<h2>Task 1: Project Case Study</h2>
-			<p>The LoRaServer was introduced to us by Brendan Kelly, a member of the IoT Dunedin Project. He had briefly investigated different solutions to hosting a local LoRa network without relying on cloud solutions.
-			Writing a case study investigating an example of how the LoRaServer was implemented would help our group decide if the LoRaServer would suit our needs or not.
-			After giving an open invitation for interviews on the <a href="https://gitter.im/loraserver/loraserver" target="_blank">gitter page</a> for loraserver. I began talking with Lederer, G. about his personal experience with the loraserver technology. His experience was used to create a case study reflecting loraserver usage with a focus on scalability of the loraserver technology. It was difficult to define an exact version of the technology because at the time of writing the loraserver was updated to version 0.15.0, and Lederer may have been using a different version as well.</p>
+			<p>The LoRaServer was introduced to us by Brendan Kelly, a member of the IoT Dunedin Project. He had briefly investigated different solutions to hosting a local LoRa network without relying on cloud solutions.</p>
+			<p>Writing a case study investigating an example of how the LoRaServer was implemented would help our group decide if the LoRaServer would suit our needs or not.</p>
+			<p>After giving an open invitation for interviews on the <a href="https://gitter.im/loraserver/loraserver" target="_blank">gitter page</a> for loraserver. I began talking with Lederer, G. about his personal experience with the loraserver technology. His experience was used to create a case study reflecting loraserver usage with a focus on scalability of the loraserver technology. It was difficult to define an exact version of the technology because at the time of writing the loraserver was updated to version 0.15.0, and Lederer may have been using a different version as well.</p></p>
 			<br>
 			<h2>Task 2: Research of LoRaServer</h2>
-			<p>Before setting up the loraserver, it was important to research as much about the loraserver itself before developing a full loraserver, so we would have a better understanding of the technology and whether it suited the Project.
-			The webpage <a href="https://docs.loraserver.io" target="_blank">https://docs.loraserver.io</a> is the official documentation site for loraserver. It contains information about the architecture, the nodes that collect the data, and a brief summary of the role of any application that is used to access data on the network.
-			The first step was to confirm that we could support the requirements. Most of the instructions to set up the server required a linux distribution and shell commands, so we knew that the server would have to be deployed on a Linux machine. We chose Ubuntu because students who have taken the Linux paper in Otago Polytechnic learn using Ubuntu machines.
-			Because this architecture is a network of devices communicating with each other, it was important that there were no firewalls blocking certain ports between devices, and that we could assign fixed IP addresses to our devices. Fortunately the local network used for our development gave us the opportunity to use fixed addresses and there were no firewalls blocking ports between devices.</p>
+			<p>Before setting up the loraserver, it was important to research as much about the loraserver itself before developing a full loraserver, so we would have a better understanding of the technology and whether it suited the Project.</p>
+			<p>The webpage <a href="https://docs.loraserver.io" target="_blank">https://docs.loraserver.io</a> is the official documentation site for loraserver. It contains information about the architecture, the nodes that collect the data, and a brief summary of the role of any application that is used to access data on the network.</p>
+			<p>The first step was to confirm that we could support the requirements. Most of the instructions to set up the server required a linux distribution and shell commands, so we knew that the server would have to be deployed on a Linux machine. We chose Ubuntu because students who have taken the Linux paper in Otago Polytechnic learn using Ubuntu machines.</p>
+			<p>Because this architecture is a network of devices communicating with each other, it was important that there were no firewalls blocking certain ports between devices, and that we could assign fixed IP addresses to our devices. Fortunately the local network used for our development gave us the opportunity to use fixed addresses and there were no firewalls blocking ports between devices.</p></p>
 			<br>
 			<h2>Task 3: Setup of LoRaServer</h2>
 			<p>The initial attempt at creating a host for the LoRaServer was performed using an Ubuntu virtual machine and following the instructions on the <a href="https://www.loraserver.io/" target="_blank">official website</a>. It was soon decided that a VM wouldn’t be suitable for testing because other people would want direct access to the server, and the VM wouldn’t be able to handle some of the port and network requirements.
-			A new host was setup on a physical machine. The loraserver package was installed and setup, but then we realised that two separate packages also needed to be installed, along with third party packages such as PostgreSQL and mosquito.
-			Once all appropriate packages were installed, we turned our focus more to the gateway rather than the server.</p>
+			<p>A new host was setup on a physical machine. The loraserver package was installed and setup, but then we realised that two separate packages also needed to be installed, along with third party packages such as PostgreSQL and mosquito.</p>
+			<p>Once all appropriate packages were installed, we turned our focus more to the gateway rather than the server.</p></p>
 			<p>At some point, I decided to update the software on the server using the resgular Ubuntu commands <code>sudo apt-get update</code> and <code>sudo apt-get upgrade</code>. This caused the LoRaServer to update to the latest version and navigating to the unsecure web page (http rather than https) for the lora-app-server responded with a ‘yet-to-be identified’ image.</p>
 			<img src="images/unknownIcon.png"/><br>
 			<p>I uninstalled the loraserver packages and started again following the same pattern I used to install the packages on the same device earlier in the semester. After installation, the web page was still responding with the same image. I was close to reinstalling the entire operating system when I noticed in the instructions in the official LoRaServer documentation said to navigate to the secure wep page (https). This solved the issue and no reinstall was required.</p>
@@ -317,8 +318,7 @@
 			<br>
 			<h2>Task 4: SSH access and Server backups</h2>
 			<p>I had previously learned how to access Linux machines using SSH in a secure fashion, and I applied the same process to the loraserver. Users require a public-private keypair to access the server remotely as well as a password when logging in. Keypairs can be obtained from the systems administrator on request.
-			With help from Zoe, we created a simple database backup for all related databases.
-			Here is an example of the database dump</p>
+			With help from Zoe, we created a simple database backup for all related databases. Here is an example of the database dump</p>
 
 			<code>sudo pg_dump –U loraserver_ns –W –h 127.0.0.1 loraserver_ns > ~/backup_loraserver</code>
 		</div>

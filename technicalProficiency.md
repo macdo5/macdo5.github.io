@@ -1,4 +1,3 @@
-# Project 2 - Technical Proficiency
 
 ## What is the overall quality of your code?
 
