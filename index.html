@@ -249,12 +249,12 @@
             <p>The third section defines the MQTT methods required for connecting and subscribing to an MQTT publisher, and the method for processing MQTT messages. The processing is more involved than other parts of the script and so alongside the process is comments describing each action.</p>
             <br>
             <p>For example, one section of the script converts a string representation of a datetime and converts it to the BSON readable ISO-datetime format. This is a confusing line of code even to me, but the functionality is explained in the comments:</p>
-            <code>
+            <pre><code>
                 # create the json from the data_entry object
                 # from https://stackoverflow.com/questions/127803
                 # Take the string for 'time' and convert into ISO-datetime format 8601DZ
                 data_entry = DataEntry(message_json['data'], datetime.datetime.strptime(message_json['rxInfo'][0]['time'], "%Y-%m-%dT%H:%M:%S.%fZ"))
-            </code>
+            </code></pre>
             <p>In the comments, I include the source from stackoverflow.com even though answers from StackOverflow are badly reputed. The answer I found was accurate and works for converting RFC 3339 to ISO 8601DZ.  </p>
             <p>Other answers I found were for parsing dates of unknown format such as dateutil.parser.parse. I included my source to explain my reasoning, so other people reading the script and creating modified or improved versions would be able to keep the original date parsing or choose an alternative.</p>
             <br>
