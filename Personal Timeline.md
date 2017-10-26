@@ -167,54 +167,8 @@ $ sudo apt-get update
 $ sudo apt-get install certbot 
 ```
 `If you already have a webserver running, we recommend choosing the "webroot" plugin. To obtain a cert using the "webroot" plugin, which can work with the webroot directory of any webserver software:`  
-from `https://www.digitalocean.com/community/tutorials/how-to-use-certbot-standalone-mode-to-retrieve-let-s-encrypt-ssl-certificates`
-
-```
-dunedinadmin@ubuntu:/etc/lora-app-server/certs$ sudo certbot certonly --standalone --preferred-challenges tls-sni -d iot.op-bit.nz
-Saving debug log to /var/log/letsencrypt/letsencrypt.log
-Enter email address (used for urgent renewal and security notices) (Enter 'c' to
-cancel): macdo5@student.op.ac.nz
-
--------------------------------------------------------------------------------
-Please read the Terms of Service at
-https://letsencrypt.org/documents/LE-SA-v1.1.1-August-1-2016.pdf. You must agree
-in order to register with the ACME server at
-https://acme-v01.api.letsencrypt.org/directory
--------------------------------------------------------------------------------
-(A)gree/(C)ancel: A
-
--------------------------------------------------------------------------------
-Would you be willing to share your email address with the Electronic Frontier
-Foundation, a founding partner of the Let's Encrypt project and the non-profit
-organization that develops Certbot? We'd like to send you email about EFF and
-our work to encrypt the web, protect its users and defend digital rights.
--------------------------------------------------------------------------------
-(Y)es/(N)o: N
-Obtaining a new certificate
-Performing the following challenges:
-tls-sni-01 challenge for iot.op-bit.nz
-Waiting for verification...
-Cleaning up challenges
-
-IMPORTANT NOTES:
- - Congratulations! Your certificate and chain have been saved at:
-   /etc/letsencrypt/live/iot.op-bit.nz/fullchain.pem
-   Your key file has been saved at:
-   /etc/letsencrypt/live/iot.op-bit.nz/privkey.pem
-   Your cert will expire on 2017-12-17. To obtain a new or tweaked
-   version of this certificate in the future, simply run certbot
-   again. To non-interactively renew *all* of your certificates, run
-   "certbot renew"
- - Your account credentials have been saved in your Certbot
-   configuration directory at /etc/letsencrypt. You should make a
-   secure backup of this folder now. This configuration directory will
-   also contain certificates and private keys obtained by Certbot so
-   making regular backups of this folder is ideal.
- - If you like Certbot, please consider supporting our work by:
-
-   Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
-   Donating to EFF:                    https://eff.org/donate-le
-```
+from `https://www.digitalocean.com/community/tutorials/how-to-use-certbot-standalone-mode-to-retrieve-let-s-encrypt-ssl-certificates`  
+`dunedinadmin@ubuntu:/etc/lora-app-server/certs$ sudo certbot certonly --standalone --preferred-challenges tls-sni -d iot.op-bit.nz`
 Edit the HTTP_TLS_CERT variable to /etc/letsencrypt/live/iot.op-bit.nz/fullchain.pem and HTTP_TLS_KEY to /etc/letsencrypt/live/iot.op-bit.nz/privkey.pem
 `crontab -e`
 `0 02 01 */3 * certbot renew`
@@ -231,3 +185,17 @@ Our showcase will display water moisture of a potplant from 2-3 kms away (almost
 over time from a single pot plant. I have a few at home that I could use. Failing that, we can fabricate some data, as long as we can display a graph for showcase.
 A new web app for the showcase has started, and it will require using an MQTT subscription. My mqtt_Listen_Sensor_Data script can be converted into
 JavaScript, or Thomas' script can be used to subscribe to the moisture MQTT application.
+
+### Week 13
+I tried running Thomas' JavaScript for subscribing to our server but it had an error: `WebSocket connection to 'ws://iot.op-bit.nz:1884/mqtt' failed: Error in connection establishment: net::ERR_CONNECTION_TIMED_OUT`. I'll get back to that later.
+### Week 14
+Thomas' JavaScript relies on a websocket and the server is currently only listening on the mqtt port 1883. 
+We have to create another listener on port 1884 using the websocket protocol. That can be done by editing the mosquitto.conf file, much like in this article:
+`https://tech.scargill.net/mosquitto-and-web-sockets/`.  
+We won't be able to test it on the Polytechnic network because that requires asking the network admin to open port 1884 for us. He's opened ports one by one 
+for about 5 ports now and he's getting sick of it. I assured him we would only bother him with a list of ports by 06/11/17 or not at all. He suggested we 
+use a single device and a network rule to allow all communication through all ports between that device and our server, but that wouldn't work for us 
+because our users will be using different devices. It shouldn't matter at this point, with any luck there will be no more ports to open.  
+While we wait for that port to open, we can still use the mqtt protocol for non-browsers, and we can test our code using `test.mosquitto.org` or similar. 
+I have the Mongo database back up and running, we just need to start gathering data for it and make sure that devices on the OP-Guest network can connect to
+it.
