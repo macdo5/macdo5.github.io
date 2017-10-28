@@ -21,10 +21,11 @@ Code documentation was included in the comments, with header comments explaining
 
 ## How well did you respond to problems or changing requirements?
 
-One of the main problems I had to fix was the blocked port issue; accessing the web server was not possible on the default port 8080 and MQTT messages couldn't be sent or received on port 1883.  
+One of the main problems I had to fix was the blocked port issue; when we moved the dev to prod, accessing the web server was not possible on the default port 8080 and MQTT messages couldn't be sent or received on port 1883. We had just assumed everything would work on the prod because there had been no issues on the dev.
 We were able to fix the web server port issue by changing the port to 443, which is already open on the polytechnic firewall. To allow MQTT through the Polytechnic firewall we had to ask our systems administrator Rob to go through the process of opening port 1883.  
-While we were waiting for the port to open, we were able to temporarily work around the issue by using a different network; we were able to subscribe to our MQTT web server from home or by using cellular data.
+While we were waiting for the port to open, we were able to temporarily work around the issue by using a different network; we were able to subscribe to our MQTT web server from home or by using cellular data.  
+Another problem I discovered was that the MongoDB was becoming bloated. I had to refactor the script so that there was no data duplication in the server.
 The step to solving these problems were
 - identifying the source of the issue.
-- considering the possible solutions andchoosing the solution with the best outcome.
+- considering the possible solutions and choosing the solution with the best outcome.
 - taking the steps neccessary to apply the solution. 

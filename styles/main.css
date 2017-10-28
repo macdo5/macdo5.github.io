@@ -45,7 +45,7 @@ body {
 	background: linear-gradient(
       rgba(0, 0, 0, 0.5), 
       rgba(0, 0, 0, 0.5)
-    ), url(../images/Clocktower1.jpg), center;
+    ), url(../images/Ravensbourne2.jpg), center;
     background-size: cover;
 }
 
@@ -85,7 +85,7 @@ body {
 	background: linear-gradient(
       rgba(0, 0, 0, 0.5), 
       rgba(0, 0, 0, 0.5)
-    ), url(../images/Ravensbourne2.jpg), center;
+    ), url(../images/Clocktower1.jpg), center;
     background-repeat: no-repeat;
 }
 
@@ -93,7 +93,7 @@ body {
 	background: linear-gradient(
       rgba(0, 0, 0, 0.5), 
       rgba(0, 0, 0, 0.5)
-    ), url(../images/Clocktower2.jpg), center;
+    ), url(../images/Ravensbourne2_1525x789.jpg), center;
     background-size: cover;
 }
 
