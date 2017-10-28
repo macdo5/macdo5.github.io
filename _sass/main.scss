@@ -1,0 +1,108 @@
+---
+---
+
+// start content
+body {
+  position: relative;
+  background-color: #1a001e
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+	background-color: #330033
+}
+
+.affix {
+  top:0;
+  width: 100%;
+  z-index: 9999 !important;
+}
+
+/* Remove the navbar's default margin-bottom and rounded borders */ 
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  background-color: #1a001a;
+}
+
+.affix ~ .container-fluid {
+ position: relative;
+ top: 50px;
+ width: 100%;
+}
+
+.jumbotron{
+	margin-bottom: 0px;
+	padding: 0px;
+}
+.container.text-center{
+	padding: 20px 0px 20px 0px;
+}
+
+.container-fluid.section{
+	margin-bottom: 40px;
+	padding-top:50px;
+	padding-bottom:50px;
+	color: #fff;
+}
+
+#DunedinIoT {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ), url(../images/Clocktower1.jpg), center;
+    background-size: cover;
+}
+
+#Android {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ), url(../images/tree1.jpg), center;
+    background-size: cover;
+}
+
+#Linux {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ), url(../images/Ravensbourne1_1141x297.jpg), center;
+    background-size: cover;
+}
+
+#Languages {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ), url(../images/Peninsula1.jpg), center;
+    background-size: cover;
+}
+
+#Bachelor {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ), url(../images/ChineseGarden2.jpg), center;
+    background-size: cover;
+}
+
+#AboutOscar {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ), url(../images/Ravensbourne2.jpg), center;
+    background-repeat: no-repeat;
+}
+
+#PersonalPortfolio {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ), url(../images/Clocktower2.jpg), center;
+    background-size: cover;
+}
+
+/* Add a gray background color and some padding to the footer */
+footer {
+  background-color: #f2f2f2;
+  padding: 25px;
+}

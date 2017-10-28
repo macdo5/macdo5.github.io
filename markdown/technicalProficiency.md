@@ -1,4 +1,8 @@
-
+---
+layout: default
+title: 'Technical Proficiency'
+permalink: technicalProficiency
+---
 ## What is the overall quality of your code?
 
 For the purposes of answering this question succinctly, I will use the script called mqtt_Listen_Sensor_Data.py as the best example of my overall code quality.
@@ -14,9 +18,9 @@ The third section defines the MQTT methods required for connecting and subscribi
 For example, one section of the script converts a string representation of a datetime and converts it to the BSON readable ISO-datetime format. This is a confusing line of code even to me, but the functionality is explained in the comments:
 ```
 # create the json from the data_entry object
-    # from https://stackoverflow.com/questions/127803
-    # Take the string for 'time' and convert into ISO-datetime format 8601DZ
-    data_entry = DataEntry(message_json['data'], datetime.datetime.strptime(message_json['rxInfo'][0]['time'], "%Y-%m-%dT%H:%M:%S.%fZ"))
+# from https://stackoverflow.com/questions/127803
+# Take the string for 'time' and convert into ISO-datetime format 8601DZ
+data_entry = DataEntry(message_json['data'], datetime.datetime.strptime(message_json['rxInfo'][0]['time'], "%Y-%m-%dT%H:%M:%S.%fZ"))
 ```
 In the comments, I include the source from stackoverflow.com even though answers from StackOverflow are badly reputed. The answer I found was accurate and works for converting RFC 3339 to ISO 8601DZ.  
 Other answers I found were for parsing dates of unknown format such as dateutil.parser.parse. I included my source to explain my reasoning, so other people reading the script and creating modified or improved versions would be able to keep the original date parsing or choose an alternative.
@@ -29,14 +33,14 @@ In conclusion, my style of writing code gives peers an easy understanding of the
 
 ## How well did you follow best practices in development?
 
-Task volunteering  
+**Task volunteering**  
 Tasks were open to volunteers at the start of the semester. Each student was allowed to select the task that appealed to them most.
 
-Testing  
+**Testing**  
 Unit tests are an important practice for all Agile development projects. Our project had no focus on unit tests, but we did test our products by using them in the real world, ensuring that communication worked from end to end.  
 This did reveal several bugs that we weren't aware of before, such as blocked ports on the Polytechnic network. 
 
-Refactoring  
+**Refactoring**  
 Real world testing has shown us where our code needed improvement. My personal example of this is in the mqtt_Listen_Sensor_Data script, in an earlier version I uploaded every new message to the database as soon as it arrived. When it was tested, it showed that the database would quickly become bloated.  
 I refactored the database structure and the script so that each node would be stored only once, and only the data and time would be added to the node data entries, significantly reducing the bloat.
 
