@@ -1,5 +1,6 @@
 body {
-  position: relative; 
+  position: relative;
+  background-color: #1a001e
 }
 
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
@@ -40,52 +41,60 @@ body {
 	color: #fff;
 }
 
-#LoRaWAN {
+#DunedinIoT {
 	background: linear-gradient(
       rgba(0, 0, 0, 0.5), 
       rgba(0, 0, 0, 0.5)
-    ), url(images/Ravensbourne3.jpg);
-	background-position: center;
+    ), url(images/Clocktower1.jpg), center;
+    background-size: cover;
 }
 
 #Android {
     background: linear-gradient(
       rgba(0, 0, 0, 0.5), 
       rgba(0, 0, 0, 0.5)
-    ), url(images/Ravensbourne2.jpg);
-	background-position: center;
+    ), url(images/tree1.jpg), center;
+    background-size: cover;
 }
 
 #Linux {
 	background: linear-gradient(
       rgba(0, 0, 0, 0.5), 
       rgba(0, 0, 0, 0.5)
-    ), url(images/Ravensbourne1.jpg);
-	background-position: center;
+    ), url(images/Ravensbourne1_1141x297.jpg), center;
+    background-size: cover;
 }
 
 #Languages {
 	background: linear-gradient(
       rgba(0, 0, 0, 0.5), 
       rgba(0, 0, 0, 0.5)
-    ), url(images/Ravensbourne3.jpg);
-	background-position: center;
+    ), url(images/Peninsula1.jpg), center;
+    background-size: cover;
 }
 
 #Bachelor {
 	background: linear-gradient(
       rgba(0, 0, 0, 0.5), 
       rgba(0, 0, 0, 0.5)
-    ), url(images/Ravensbourne2.jpg);
-	background-position: center;
+    ), url(images/ChineseGarden2.jpg), center;
+    background-size: cover;
 }
 
 #AboutOscar {
 	background: linear-gradient(
       rgba(0, 0, 0, 0.5), 
       rgba(0, 0, 0, 0.5)
-    ), url(images/Ravensbourne1.jpg);
-	background-position: center;
+    ), url(images/Ravensbourne2.jpg), center;
+    background-repeat: no-repeat;
+}
+
+#PersonalPortfolio {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ), url(images/Clocktower2.jpg), center;
+    background-size: cover;
 }
 
 /* Add a gray background color and some padding to the footer */

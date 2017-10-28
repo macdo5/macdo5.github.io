@@ -1,7 +1,0 @@
-Jekyll setup steps:
-sudo apt-get install ruby-full
-sudo gem update --system
-sudo gem install jekyll
-jekyll build
-sudo apt-get install npm 
-npm install bootstrap 

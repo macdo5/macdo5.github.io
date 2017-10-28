@@ -69,3 +69,6 @@ kramdown:
   input:          GFM
   hard_wrap:      false
   footnote_nr:    1
+
+repository: macdo5/macdo5.github.io
+github: [metadata]
