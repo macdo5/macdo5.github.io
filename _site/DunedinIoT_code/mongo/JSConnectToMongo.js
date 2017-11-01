@@ -1,13 +1,25 @@
 // requires nodejs and npm to connect to Mongo.
 // >npm install mongodb
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/duniot_database";
+var assert = require('assert');
+var ObjectId = require('mongodb').ObjectID;
+var url = "mongodb://10.118.0.84:27017/local";
+
+var findTest = function(db, callback) {
+  var cursor =db.collection('startup_log').find( );
+  cursor.each(function(err, doc) {
+     assert.equal(err, null);
+     if (doc != null) {
+        console.dir(doc);
+     } else {
+        callback();
+     }
+  });
+};
 
 MongoClient.connect(url, function(err, db) {
-  if (err) throw err;
-  db.node_data.find().toArray(function(err, result) {
-    if (err) throw err;
-    console.log(result);
-    db.close();
+  assert.equal(null, err);
+  findTest(db, function() {
+      db.close();
   });
 });

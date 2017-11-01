@@ -35,8 +35,8 @@ function getJWT(username, pass){
 function onJWT(jwt){
   var xhr = new XMLHttpRequest();
 // get all nodes from application 3
-  xhr.open("GET", "https://iot.op-bit.nz/api/applications/3/nodes?", true);
-  xhr.setRequestHeader("Grpc-Metadata-Authorization", JSON.parse(jwt).jwt);
+  xhr.open("GET", "https://iot.op-bit.nz/api/applications/3/nodes?limit=100", true);
+	xhr.setRequestHeader("Grpc-Metadata-Authorization", JSON.parse(jwt).jwt);
   xhr.onload = function (e) {
     if (xhr.readyState === 4) {
 	  // if everything is ok
@@ -45,7 +45,7 @@ function onJWT(jwt){
 	  // otherwise, print what went wrong
       } else {
         console.error(xhr.statusText);
-	    console.log(xhr.responseText);
+	    	console.log(xhr.responseText);
       }
     }
   };
