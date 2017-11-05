@@ -23,6 +23,7 @@ param: subscription topic
 import datetime
 import json
 import paho.mqtt.client as mqtt
+import sys
 from pymongo import MongoClient
 # http://api.mongodb.com/python/1.10.1/api/bson/json_util.html
 # Tools for using Python's json module with BSON documents
