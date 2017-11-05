@@ -82,7 +82,7 @@ def on_message(mosq, obj, msg):
     print("MQTT Topic: " + msg.topic)
     # create a json object from the received mqtt data
     print("extracting data")
-    message_json = null
+    message_json = None
     try:
         message_json = json.loads(msg.payload)
     	# create the json from the data_entry object
@@ -107,6 +107,7 @@ def on_message(mosq, obj, msg):
             print("node not found in database, creating new node...")
             # build the new node json:
             new_node = NodeEntry(
+
                 message_json['devEUI'],
                 message_json['nodeName'],
                 message_json['applicationID'],
