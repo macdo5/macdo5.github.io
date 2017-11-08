@@ -16,8 +16,8 @@ I wanted to be approachable and friendly to my peers, so I was always happy to a
 
 ## How well did you document your work throughout the project?
 
-When creating the initial server, each step was documented. Using th documentation, we were able to create a simplified step-by-step tutorial to recreate the server.  
-Code documentation was included in the comments, with header comments explaining the purpose of the script and inline comments explaining 
+When creating the initial server, each step was documented. Using the documentation, we were able to create a simplified step-by-step tutorial to recreate the server.  
+Code documentation was included in the comments, with header comments explaining the purpose of the script and inline comments explaining .
 
 ## How well did you respond to problems or changing requirements?
 

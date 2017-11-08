@@ -54,7 +54,7 @@ NoSQL:
 ## Week 4
 There are several examples of people who have used MongoDB to store incoming MQTT packets. JavaScript and Python have methods for running MQTT subscribers and methods for operating MongoDB, so either language could be used to store data.
 My favourite freely available script was by [Pradeep Singh](https://iotbytes.wordpress.com/store-mqtt-data-from-sensors-into-sql-database/), and with a bit of configuration I could run the script on our local server and store the data in a mongo database.
-[See the full customized script here](DunedinIoT_code/mqtt_subscribers/mqtt_Listen_Sensor_Data.py).
+[See the full customized script here](https://github.com/macdo5/macdo5.github.io/blob/master/DunedinIoT_code/mqtt_subscribers/mqtt_Listen_Sensor_Data.py).
 
 The main part of the script is what it does when a new message arrives:
 ```

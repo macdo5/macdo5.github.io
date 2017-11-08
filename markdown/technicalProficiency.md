@@ -5,7 +5,7 @@ permalink: technicalProficiency
 ---
 ## What is the overall quality of your code?
 
-For the purposes of answering this question succinctly, I will use the script [mqtt_Listen_Sensor_Data.py](DunedinIoT_code/mqtt_subscribers/mqtt_Listen_Sensor_Data.py) as the best example of my overall code quality.
+For the purposes of answering this question succinctly, I will use the script [mqtt_Listen_Sensor_Data.py](https://github.com/macdo5/macdo5.github.io/blob/master/DunedinIoT_code/mqtt_subscribers/mqtt_Listen_Sensor_Data.py) as the best example of my overall code quality.
 The script’s original author is Pradeep Singh, and I want to credit the original author. He has done a good job introducing the MQTT protocol to Python.  
 The script assumes the reader already knows several things: what Mongo is and how it stores data, what LoRa is and how the network operates, what MQTT is and the basic layout of LoRa MQTT messages. I would advise anyone who wants to use this script to familiarize themselves with these concepts before using it.
 
