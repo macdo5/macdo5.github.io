@@ -3,7 +3,6 @@ layout: default
 title: 'Personal Timeline'
 permalink: personalTimeline
 ---
-{% include masterNavbar.html %}
 # Personal Timeline
 ## Week 1
 First order of business was to look at Trello to keep up to date.
