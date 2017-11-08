@@ -5,7 +5,7 @@ permalink: technicalProficiency
 ---
 ## What is the overall quality of your code?
 
-For the purposes of answering this question succinctly, I will use the script called mqtt_Listen_Sensor_Data.py as the best example of my overall code quality.
+For the purposes of answering this question succinctly, I will use the script [mqtt_Listen_Sensor_Data.py](DunedinIoT_code/mqtt_subscribers/mqtt_Listen_Sensor_Data.py) as the best example of my overall code quality.
 The script’s original author is Pradeep Singh, and I want to credit the original author. He has done a good job introducing the MQTT protocol to Python.  
 The script assumes the reader already knows several things: what Mongo is and how it stores data, what LoRa is and how the network operates, what MQTT is and the basic layout of LoRa MQTT messages. I would advise anyone who wants to use this script to familiarize themselves with these concepts before using it.
 
@@ -34,7 +34,7 @@ In conclusion, my style of writing code gives peers an easy understanding of the
 ## How well did you follow best practices in development?
 
 **Task volunteering**  
-Tasks were open to volunteers at the start of the semester. Each student was allowed to select the task that appealed to them most.
+Tasks were open to volunteers at the start of the semester. Each student was allowed to select the task that appealed to them most. I was given several tasks to continue with from last semester but I still volunteered with several extra tasks this semester
 
 **Testing**  
 Unit tests are an important practice for all Agile development projects. Our project had no focus on unit tests, but we did test our products by using them in the real world, ensuring that communication worked from end to end.  
