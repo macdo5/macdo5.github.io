@@ -8,15 +8,18 @@ permalink: personalTimeline
 First order of business was to look at Trello to keep up to date.
 I selflessly gave the old server to Patrick and let him reinstall windows over all the data. Bye-bye old server.
 New server had to be setup. Fortunately I was able to follow the instructions from last semester and also the tutorials from [loraserver](https://docs.loraserver.io/overview/)
-IoT meetup arranged.
+IoT meetup arranged.  
+
 ## Week 2
-Continue working on setting up the server like last year, add organizations, users, gateways, applications and nodes to web server.
+Continue working on setting up the server like last year, add organizations, users, gateways, applications and nodes to web server.  
+
 ## Week 3
 Installed mqtt subscriber: mosquitto. Data that comes in from gateways is in JSON format, which should be easy to parse. 
 We want to store the data persistently, so I researched different solutions to storing the data. 
 Mosquitto said it has a way of storing data persistently, but this is only for queuing mqtt messages temporarily, not for a complete database solution.
 I've learnt how to use SQL in the past, but with encouragement from team members (who were 'converted' by Chris Franz) I decided to research NoSQL implementations as well.
-The loraserver stores information about organizations, users, gateways, applications and nodes in a PostgreQL database, but the only thing it doesn't store is data.
+The loraserver stores information about organizations, users, gateways, applications and nodes in a PostgreQL database, but the only thing it doesn't store is data.  
+
 ### Database design.
 Looking at the App server, I want to see what its parameters are and how they would match our database.
 I tried to create an organization that had the same name as an existing organization. I received this error:
@@ -50,7 +53,8 @@ NoSQL:
 - Agile development projects
 - Scalable and flexible databases
 - Document based, key-value pairs, graph databases or wide-column stores. No standard schema definitions which it needs to adhere to.
--- This gives it a dynamic schema for unstructured data.
+-- This gives it a dynamic schema for unstructured data.  
+
 ## Week 4
 There are several examples of people who have used MongoDB to store incoming MQTT packets. JavaScript and Python have methods for running MQTT subscribers and methods for operating MongoDB, so either language could be used to store data.
 My favourite freely available script was by [Pradeep Singh](https://iotbytes.wordpress.com/store-mqtt-data-from-sensors-into-sql-database/), and with a bit of configuration I could run the script on our local server and store the data in a mongo database.
@@ -75,11 +79,12 @@ def on_message(mosq, obj, msg):
     new_entry_id = mqtt_collection.insert_one(new_mqtt_data).inserted_id
     print("Success. Entry ID is " + str(new_entry_id))
 ```
-This week, we can't decode the data for some reason.
+This week, we can't decode the data for some reason.  
+
 ## Week 5
 After leaving the script running for the weekend collecting the node information from the room sensor (about every 3 minutes), there were over 4,000 entries in the database. The database size was already 1MB large. If we store the data from hundreds of nodes over months, our database will quickly expand beyond reasonable limits!
 5554 entries in the database is 2.731 MB!
-The MQTT JSON contains a lot of redundant or useless info, all we want is the payload data, timestamp, and node of origin. A new database has to be designed. The node info is already in the PostgreSQL database, but that would mean combining PostgreSQL and MongoDB queries, which might not end well.
+The MQTT JSON contains a lot of redundant or useless info, all we want is the payload data, timestamp, and node of origin. A new database has to be designed. The node info is already in the PostgreSQL database, but that would mean combining PostgreSQL and MongoDB queries, which might not end well.  
 
 ## Week 6
 After dropping the database and re-writing the script, the database now collects only the relevant data.
@@ -139,15 +144,15 @@ def on_message(mosq, obj, msg):
         print("Value Error({0}): {1}".format(e.errno, e.strerror))
 ```
 The size of the database is much smaller now, but we've decided to not collect the data on the web-app server side. It's not a problem though, because we will be able to run a local server in the polytech to collect the data instead.  
-We will be deploying pretty soon.
+We will be deploying pretty soon.  
 
 ## Week 7
 We're getting ready to migrate the development server onto the production server, so we needed a clean install to reduce diskspace and resource consumption on the cloud.
 I did a fresh install of the ubuntu server and loraserver and it's ready to be copied and uploaded. We won't be able to store data in a mongoDB on the cloud, but we could use our own server on-site that subscribes to the cloud server and runs a mongoDB, which could be useful for future applications.
-Migrated my branch folders from TheThingsNetworkDunedin to DunedinIoT on GitHub.
+Migrated my branch folders from TheThingsNetworkDunedin to DunedinIoT on GitHub.  
 
 ## Week 8
-All of us are waiting for the server to go online, in the meantime we can focus on more documentation, personal timelines, our portfolios, basically any work that currently has a lower priority.
+All of us are waiting for the server to go online, in the meantime we can focus on more documentation, personal timelines, our portfolios, basically any work that currently has a lower priority.  
 
 ## Week 9
 The LoRa server was officially deployed. The web address is https://iot.op-bit.nz:8080. We need to find a way to change the address to https://iot.op-bit.nz, to make it simpler for the user.
@@ -159,7 +164,8 @@ sudo touch /etc/authbind/byport/80
 sudo chmod 500 /etc/authbind/byport/80
 sudo chown dunedinadmin /etc/authbind/byport/80
 sudo systemctl start lora-app-server
-```
+```  
+
 ## Week 10
 Website is down, and I have no idea how to fix it. Can access the website through putty but can't ping it. Talked to Michael from the BIT Platform group about it, he wasn't sure either so we took it to Rob.  
 Rob said to check the firewalls for both the server and AWS itself. After opening port 80 we managed to connect to the web page again.  
@@ -182,20 +188,21 @@ Edit the HTTP_TLS_CERT variable to /etc/letsencrypt/live/iot.op-bit.nz/fullchain
 `0 02 01 */3 * certbot renew`
 Will run every three months at 03:30 on the 1st of Jan,Apr,Jul and Oct.  
   
-After hitting a problem wile running the lora-app-process (permission denied on a .pem file), I tried adding a new group that the user appserver would be part of, and would give permission to access the file.
+After hitting a problem wile running the lora-app-process (permission denied on a .pem file), I tried adding a new group that the user appserver would be part of, and would give permission to access the file.  
 
 ## Week 11
-Nothing new to report
+Nothing new to report  
 
 ## Week 12
 To prepare for the showcase, I will recreate the Mongo database on our local server. We can use it to show graphs representing node data over time.
 Our showcase will display water moisture of a potplant from 2-3 kms away (almost a 'hello world' for IoT projects). I will collect data of water moisture
 over time from a single pot plant. I have a few at home that I could use. Failing that, we can fabricate some data, as long as we can display a graph for showcase.
 A new web app for the showcase has started, and it will require using an MQTT subscription. My mqtt_Listen_Sensor_Data script can be converted into
-JavaScript, or Thomas' script can be used to subscribe to the moisture MQTT application.
+JavaScript, or Thomas' script can be used to subscribe to the moisture MQTT application.  
 
 ## Week 13
-I tried running Thomas' JavaScript for subscribing to our server but it had an error: `WebSocket connection to 'ws://iot.op-bit.nz:1884/mqtt' failed: Error in connection establishment: net::ERR_CONNECTION_TIMED_OUT`. I'll get back to that later.
+I tried running Thomas' JavaScript for subscribing to our server but it had an error: `WebSocket connection to 'ws://iot.op-bit.nz:1884/mqtt' failed: Error in connection establishment: net::ERR_CONNECTION_TIMED_OUT`. I'll get back to that later.  
+
 ## Week 14
 Thomas' JavaScript relies on a websocket and the server is currently only listening on the mqtt port 1883. 
 We have to create another listener on port 1884 using the websocket protocol. That can be done by editing the mosquitto.conf file, much like in this article:
