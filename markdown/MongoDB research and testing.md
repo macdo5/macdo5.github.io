@@ -1,3 +1,8 @@
+---
+layout: default
+title: 'MongoDB Research and Testing'
+permalink: mongodbResearchAndTesting
+---
 # MongoDB Research
 ## MongoDB Tutorial
 Database - physical container for collections. Single MongoDB server hosts multiple databases  

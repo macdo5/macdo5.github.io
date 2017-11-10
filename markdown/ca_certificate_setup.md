@@ -1,3 +1,8 @@
+---
+layout: default
+title: 'CA Certificate Setup'
+permalink: caCertificateSetup
+---
 Installing CA certificates, from `https://letsencrypt.org/getting-started/`:  
 `We recommend that most people with shell access use the Certbot ACME client.`  
 from `https://certbot.eff.org/#ubuntuxenial-other`:  
